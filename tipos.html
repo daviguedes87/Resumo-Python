@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Dados - Escola Python</title>
+    <!-- Link para o CSS que já estamos usando -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Menu de Navegação -->
+    <nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+    <main>
+        <section id="tipos-dados">
+            <h1>Tipos de dados de uma Variável</h1>
+            
+            <div class="card">
+                <p>Agora que você já sabe o que são as variáveis, é fundamental conhecer os tipos existentes no Python!</p>
+                <p>Como vimos, as variáveis são caixas, e cada caixa no Python é feita para armazenar um <b>tipo de dado</b> específico (texto, números, listas, etc).</p>
+            </div>
+
+            <h2>Principais tipos de dados</h2>
+            <ul>
+                <li><strong>Tipo de texto:</strong> <code>str</code> (String)</li>
+                <li><strong>Tipos numéricos:</strong> <code>int</code>, <code>float</code>, <code>complex</code></li>
+                <li><strong>Tipos de sequência:</strong> <code>list</code>, <code>tuple</code>, <code>range</code></li>
+                <li><strong>Tipo de mapeamento:</strong> <code>dict</code> (Dicionário)</li>
+                <li><strong>Tipos de conjuntos:</strong> <code>set</code>, <code>frozenset</code></li>
+                <li><strong>Tipo booleano:</strong> <code>bool</code> (True ou False)</li>
+                <li><strong>Tipos binários:</strong> <code>bytes</code>, <code>bytearray</code></li>
+                <li><strong>Nenhum tipo:</strong> <code>NoneType</code></li>
+            </ul>
+
+            <h2>Importância dos tipos de dados</h2>
+            <p>O computador entende estritamente o que você escreve. Se você tentar misturar tipos incompatíveis, ele não saberá o que fazer.</p>
+            
+            <div class="card">
+                <p><b>Situação hipotética:</b> Tentar somar uma "letra" com um "número". Se na vida real não somamos letras com números, na programação isso gera um conflito de lógica.</p>
+            </div>
+
+            <h3>Exemplo do que NÃO fazer:</h3>
+            <div class="code-box">
+    <pre><code class="syntax-highlight"><span class="syntax-variable">nome</span> = <span class="syntax-string">"Cristiano Ronaldo"</span>
+<span class="syntax-variable">numero</span> = <span class="syntax-keyword">5</span>
+
+<span class="syntax-comment"># Isso vai gerar um erro de tipo (TypeError)</span>
+<span class="syntax-variable">soma</span> = <span class="syntax-variable">nome</span> + <span class="syntax-variable">numero</span></code></pre>
+</div>
+            </div>
+
+            <div class="card" style="border-left-color: #ff4444;">
+                <!-- AQUI: Adicionada a classe error-code para aplicar o CSS específico -->
+                <p><strong>Erro no console:</strong> <code class="error-code">TypeError: can only concatenate str (not "int") to str</code></p>
+                <p>Isso acontece porque você não pode "grudar" (concatenar) uma palavra com um número inteiro diretamente.</p>
+            </div>
+
+            <h2>Explore cada tipo</h2>
+            <p>Navegue pelo menu acima para ver a explicação detalhada de cada um desses tipos de dados!</p>
+        </section>
+    </main>
+   <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

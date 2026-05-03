@@ -1,0 +1,153 @@
+/* Container dos botões no topo do card */
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    /* MÁGICA DO SCROLL: */
+    position: sticky;       /* Faz o container grudar */
+    top: 70px;              /* Distância do topo (ajuste conforme o tamanho da sua Nav) */
+    z-index: 100;           /* Garante que fique acima do código */
+    background: var(--card-bg); /* Fundo igual ao do card para não ficar transparente */
+    padding: 10px 0;        /* Espaçamento para não ficar colado */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linha sutil para separar do código */
+}
+
+/* Botão Enunciado - VERMELHO */
+.btn-enunciado {
+    background-color: #ff4444 !important;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-enunciado:hover { background-color: #cc0000 !important; }
+
+/* Botão Avançar - VERDE */
+.btn-avancar {
+    background-color: #28a745 !important;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-avancar:hover { background-color: #218838 !important; }
+
+/* Estilo do Modal com Rolagem */
+.modal-jogo {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #1e1e1e;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    border-left: 6px solid #ff4444;
+    position: relative;
+}
+
+.texto-rolagem {
+    max-height: 300px;
+    overflow-y: auto; /* Aqui acontece a mágica da rolagem */
+    padding-right: 10px;
+}
+
+.fechar {
+    position: absolute; right: 15px; top: 10px;
+    color: white; font-size: 28px; cursor: pointer;
+}
+/* Destaque interativo para os imports */
+.info-purple {
+    transition: all 0.3s ease;
+    cursor: help; /* Muda o mouse para um ícone de interrogação/ajuda */
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+.info-purple:hover {
+    background-color: #6b46c1; /* Roxo vibrante */
+    color: white !important;
+    box-shadow: 0 0 8px rgba(107, 70, 193, 0.6);
+}
+
+/* Estilo para o modal de explicação (pode usar o mesmo .modal-jogo) */
+.modal-titulo-roxo {
+    color: #a78bfa;
+    border-bottom: 2px solid #6b46c1;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.card {
+    position: relative;
+    overflow: visible; /* Importante: sticky não funciona se o pai tiver overflow: hidden */
+}
+.img-castelo-link {
+    height: 55px; /* Altura ideal para alinhar com os botões */
+    width: auto;
+    border-radius: 8px;
+    
+    /* Efeito de suavização: desvanece as bordas para misturar com o fundo escuro */
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%),
+                linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%),
+                        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-composite: source-in;
+
+    filter: saturate(0.8) brightness(0.9); /* Deixa as cores menos agressivas no modo escuro */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.img-castelo-link:hover {
+    filter: saturate(1.1) brightness(1.1); /* Ganha vida quando o usuário passa o mouse */
+    transform: scale(1.15) rotate(2deg); /* Um movimento suave de "zoom" com inclinação */
+}
+
+/* Garante que os botões e a imagem fiquem perfeitamente centralizados verticalmente */
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+.img-mario-link {
+    height: 65px; /* Um pouco maior que o castelo para destacar os detalhes */
+    width: auto;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efeito 'mola' suave */
+    cursor: pointer;
+    /* Sombra suave que acompanha o formato do desenho */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+.img-mario-link:hover {
+    /* Efeito de que o Mario está saltando para fora do card */
+    transform: scale(1.2) translateY(-8px) rotate(-3deg);
+    filter: drop-shadow(0 15px 20px rgba(255, 255, 255, 0.1));
+}
+
+/* Ajuste no container para garantir que nada saia do lugar no hover */
+.botoes-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px; /* Garante espaço para o movimento da imagem */
+    padding: 10px 0;
+}

@@ -1,0 +1,305 @@
+/* --- Variáveis e Definições de Cores --- */
+:root {
+    --python-blue: #3776ab;
+    --python-yellow: #ffd43b;
+    --nav-bg: rgba(26, 32, 44, 0.85);
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --code-bg: #1e1e1e;
+    --watermark-opacity: 0.1; 
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: rgba(30, 30, 30, 0.9);
+    --header-bg: rgba(45, 45, 45, 0.8);
+    --code-bg: #1e1e1e;
+    --watermark-opacity: 0.05;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 40%;
+    background-blend-mode: overlay;
+}
+
+/* --- Navegação --- */
+nav {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px); /* O "pulo do gato" para o efeito de vidro */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    
+    /* Mantendo suas outras configurações */
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.nav-brand { display: flex; align-items: center; gap: 15px; }
+.nav-icon { width: 35px; height: auto; }
+nav .logo { color: var(--python-yellow); font-weight: bold; font-size: 1.2rem; }
+nav ul { list-style: none; display: flex; flex-wrap: wrap; margin: 0 20px; padding: 0; flex-grow: 1; justify-content: center; }
+nav ul li { margin: 5px 12px; }
+nav ul li a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: var(--python-yellow); }
+
+nav ul li a.active {
+    background-color: #ffd43b; /* Amarelo Python */
+    color: #1e1e1e !important;   /* Texto escuro para contraste total */
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(255, 212, 59, 0.3); /* Um leve brilho */
+    transition: all 0.3s ease;
+}
+
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--python-yellow);
+    color: var(--python-yellow);
+    padding: 6px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* --- Layout --- */
+main { max-width: 1100px; margin: auto; padding: 90px 20px 40px 20px; position: relative; z-index: 1; }
+.card { background: var(--card-bg); padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 6px solid var(--python-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* --- Console --- */
+.console-btn { background-color: var(--python-yellow); color: var(--nav-bg); border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.console-output { display: none; background-color: #000; color: #00ff00; padding: 20px; border-radius: 5px; margin-top: 10px; font-family: monospace; border-left: 4px solid #333; }
+.console-output.show { display: block; animation: fadeIn 0.3s ease-in; }
+
+/* --- Code Box --- */
+.code-box { 
+    margin: 20px 0; 
+    position: relative; 
+    background-color: var(--code-bg); 
+    border-radius: 8px; 
+    padding: 20px; 
+    overflow: hidden; 
+}
+
+.code-box.erro::before {
+    background-color: #ff4444;
+}
+.code-box pre { color: #dcdcdc; padding: 10px 100px 20px 0; font-family: monospace; font-size: 1.3rem; line-height: 1.5; margin: 0; }
+
+/* Sintaxe Colab */
+.syntax-string { color: #ce9178; }
+.syntax-variable { color: #dcdcdc; }
+.syntax-function { color: #dcdcaa; }
+
+.code-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background-color: var(--python-yellow); }
+
+/* --- VERSÃO 1: CR7 Lâmpada (Outras páginas) --- */
+.cr7-image {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    max-width: 130px;
+    height: auto;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+.cr7-image.show { opacity: 1; }
+
+
+
+.cr7-perfil {
+    position: absolute !important;
+    top: 15px !important;       /* Subimos a foto! Cravado no topo da caixa cinza */
+    right: 20px !important;     /* Mantém na direita */
+    bottom: auto !important;    /* Garante que nada puxa ele pra baixo */
+    transform: none !important; /* Arranca aquela centralização que estava estragando tudo */
+    width: 110px !important;    /* O tamanho maior que você gostou */
+    height: auto !important;
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+    display: block !important;
+    z-index: 10 !important;
+
+    /* Efeito de Fade-in */
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+}
+
+/* Classe que o JavaScript adiciona para mostrar a foto */
+.cr7-perfil.show {
+    opacity: 1 !important; 
+}
+
+/* --- Rodapé --- */
+/* --- Ajuste do Footer para o Botão --- */
+footer {
+    background-color: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    padding: 15px 0;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui os itens: Esquerda, Centro e Direita */
+    padding: 0 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilo do Botão Verde de Referências */
+.btn-referencias {
+    background-color: #0db073; /* O verde exato da imagem */
+    color: white !important;   /* Força o texto a ficar branco */
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-referencias:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(13, 176, 115, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Garante que o texto central e o lado direito ocupem o mesmo espaço para o centro ser real */
+.footer-left, .footer-right {
+    flex: 1;
+}
+
+.footer-center {
+    flex: 2; /* Ocupa mais espaço no meio */
+    text-align: center;
+}
+footer a { color: var(--python-yellow); text-decoration: none; font-weight: bold; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+/* Destaque para termos importantes no texto */
+/* Box de destaque do print() no texto */
+.box-print-destaque {
+    background-color: #1e1e1e; /* Mesma cor de fundo do box de código */
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 1em; /* Tamanho proporcional ao texto ao redor */
+    font-weight: bold;
+    display: inline-block;
+    border: 1px solid #444; /* Borda sutil para dar acabamento */
+    color: #f8f8f2; /* Cor branca/cinza para os parênteses () */
+}
+
+/* Deixa apenas o nome 'print' em azul */
+.box-print-destaque span {
+    color: var(--python-blue);
+}
+/* Cor das palavras-chave do Python (if, else, for, etc) */
+.syntax-keyword { 
+    color: #c586c0; /* Roxo do Colab/VS Code */
+    font-weight: bold; 
+}
+/* Estilo do Vault Boy (Bonequinho do Fallout) */
+/* Estilo do Vault Boy - Versão Destacada */
+.vault-boy {
+    position: absolute !important;
+    right: 25px !important;    
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 110px !important;   /* Tamanho ideal para o dogue */
+    height: auto !important;
+    
+    /* Remove o fundo branco */
+    mix-blend-mode: multiply; 
+    
+    /* Ajuste de brilho mais suave para essa imagem específica */
+    filter: brightness(1.2) contrast(1.1); 
+    opacity: 1 !important;      
+    
+    pointer-events: none;      
+    z-index: 5 !important;
+}
+/* Destaque para o link da PEP 20 */
+.pep-highlight {
+    background-color: var(--python-yellow);
+    color: #1a202c !important; /* Usando a cor do seu nav para contraste */
+    padding: 3px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;       /* Peso intermediário, muito mais limpo que o bold */
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;  /* Melhora a legibilidade */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.pep-highlight:hover {
+    transform: translateY(-1px); /* Efeito sutil de flutuação */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    filter: brightness(1.05);
+}
+/* --- Estilo do Botão Azul de Exercícios --- */
+.btn-exercicios {
+    background-color: var(--python-blue);
+    color: white !important;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+.btn-exercicios:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(55, 118, 171, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Ajuste fino para o alinhamento no footer */
+.footer-right {
+    flex: 1;
+    text-align: right; /* Alinha o botão totalmente à direita */
+}
+
+.footer-left {
+    flex: 1;
+    text-align: left; /* Garante que o botão de referências fique na esquerda */
+}

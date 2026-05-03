@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios - Escola Python</title>
+    <!-- Link para o seu CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="scriptjogo.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styleexer.css">
+</head>
+<body>
+
+    <!-- Nav com Transparência e Blur -->
+    <nav>
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+            <div class="logo">Davi Python</div>
+        </div>
+        
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="variaveis.html">Variáveis</a></li>
+            <li><a href="tipos.html">Tipos de Variáveis</a></li>
+            <li><a href="string.html">O que é String</a></li>
+            <li><a href="print.html">O que é Print</a></li>
+            <li><a href="identacao.html">Identação</a></li>
+            <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+            <li><a href="numericos.html">Dados Numéricos</a></li>
+            <li><a href="listas-carac.html">Carac. Listas</a></li>
+            <li><a href="tuplas.html">Tuplas</a></li>
+            <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+            <li><a href="dicionarios.html">Dicionários</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+    </nav>
+
+    <main>
+    <header>
+        <h1>Exercícios Práticos</h1>
+        <p>Acompanhe a lógica de programação passo a passo!</p>
+    </header>
+
+    <section id="exercicios">
+        <!-- EXERCÍCIO 1 -->
+        <!-- EXERCÍCIO 1: REINO ALEATÓRIO -->
+<h2>1. Jogo do Reino Aleatório</h2>
+<div class="card">
+    <div class="botoes-container">
+        <button class="btn-enunciado" onclick="abrirModal('modal1')">Enunciado da questão:</button>
+        
+        <!-- Link da imagem do castelo inserido diretamente -->
+        <img src="https://img.freepik.com/vetores-gratis/cena-de-desenho-animado-de-conto-de-fadas-na-torre-do-castelo_1308-51841.jpg?semt=ais_hybrid&w=740&q=80" 
+             class="img-castelo-link" 
+             alt="Reino Aleatório">
+        
+        <button class="btn-avancar" onclick="avancarCodigo(1)">Avançar código</button>
+    </div>
+
+    <div class="code-box">
+        <pre><code id="python-display-1" class="syntax-highlight"># Clique em 'Avançar' para ver o código...</code></pre>
+    </div>
+</div>
+        <!-- Modal de Explicação Técnica -->
+<div id="modalExplica" class="modal-jogo">
+    <div class="modal-content" style="border-left-color: #6b46c1;">
+        <span class="fechar" onclick="fecharModal('modalExplica')">&times;</span>
+        <h3 id="tituloExplica" class="modal-titulo-roxo">Explicação</h3>
+        <div id="textoExplica" class="texto-rolagem">
+            <!-- O texto vai mudar via JavaScript -->
+        </div>
+    </div>
+</div>
+
+        <!-- EXERCÍCIO 2 -->
+        <!-- EXERCÍCIO 2: CARROS DE BRINQUEDO -->
+<!-- EXERCÍCIO 2: CARROS DE BRINQUEDO -->
+<!-- EXERCÍCIO 2: CARROS DE BRINQUEDO -->
+<h2>2. Exercício dos Carrinhos</h2>
+<div class="card">
+    <div class="botoes-container">
+        <button class="btn-enunciado" onclick="abrirModal('modal2')">Enunciado da questão:</button>
+        
+        <img src="https://static.wikia.nocookie.net/mariokart/images/f/fc/Mario_in_Mario_Kart_World.png/revision/latest/scale-to-width-down/985?cb=20250403191846" 
+             class="img-mario-link" 
+             alt="Mario Kart">
+        
+        <button class="btn-avancar" onclick="avancarCodigo(2)">Avançar código</button>
+    </div>
+
+    <div class="code-box">
+        <pre><code id="python-display-2" class="syntax-highlight"># Clique em 'Avançar' para ver o código completo da loja...</code></pre>
+    </div>
+</div>
+
+<!-- Modal do Exercício 2 -->
+<div id="modal2" class="modal-jogo">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
+        <h3 style="color: #ff4444;">📜 Exercício 2: Loja de Carrinhos</h3>
+        <div class="texto-rolagem">
+            <p>Temos diferentes modelos de carros que uma loja online possui. Defina, através da <b>abstração</b>, quais atributos e métodos o objeto <b>carro_brinquedo</b> deve ter que sejam relevantes para o contexto de uma loja online.</p>
+            
+            <p><b>Atividades a serem realizadas:</b></p>
+            <ul>
+                <li>Criar a classe com atributos e métodos relevantes (ex: preço, estoque, modelo).</li>
+                <li>Utilizar o construtor para criar instâncias da classe CarroBrinquedo.</li>
+            </ul>
+            <hr>
+            <p><i>Dica: Imagine que você é o desenvolvedor Full-Stack da loja e precisa exibir esses dados no site!</i></p>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <!-- Modais (Janelas de Enunciado) -->
+    <div id="modal1" class="modal-jogo">
+        <div class="modal-content">
+            <span class="fechar" onclick="fecharModal('modal1')">&times;</span>
+            <h3 style="color: #ff4444;">📜 Reino Aleatório</h3>
+            <div class="texto-rolagem">
+                <p>No reino de Aleatoria, seus habitantes se reuniam com entusiasmo todos os anos para participar do lendário torneio de dados. Cada jogador, ansioso pela Vitória, carregava seu próprio par de Dados, instrumento aleatório que determinaria o destino em cada rodada.
+
+Cada batalha entre dois jogadores consiste em várias rodadas (determinadas aleatoriamente com dados normais). Para cada rodada, os jogadores lançam os dados e suas pontuações são somadas. No final da batalha, a pontuação final de cada jogador é exibida e o vencedor é declarado.
+
+À medida que o torneio avançava, novos desafios e regras surpreendentes foram revelados, mantendo os jogadores em suspense e tendo que se adaptar às regras complexas do jogo. Eram dados de 4, 8, 10 e até 12 faces que desafiavam a habilidade e astúcia dos participantes.</p>
+                <p><b>Desafio:</b><ul>
+                    <li>Crie as classes necessárias para representar todos os elementos que interagem no torneio</li>
+                    <li>Defina os atributos necessários para cada uma das classes</li>
+                    <li>Relacione as classes para poder simular o torneio, realizar batalhas e determinar um vencedor</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal do Exercício 2 -->
+<div id="modal2" class="modal-jogo">
+    <div class="modal-content">
+        <span class="fechar" onclick="fecharModal('modal2')">&times;</span>
+        <!-- Troquei o pergaminho pelo kart aqui embaixo -->
+        <h3 style="color: #ff4444;">🏎️ Exercício 2: Loja de Carrinhos</h3>
+        <div class="texto-rolagem">
+            <p>Temos diferentes modelos de carros que uma loja online possui. Defina, através da <b>abstração</b>, quais atributos e métodos o objeto <b>carro_brinquedo</b> deve ter que sejam relevantes para criar a classe de acordo com o contexto da loja online.</p>
+            
+            <p><b>Atividades a serem realizadas:</b></p>
+            <ul>
+                <li>Criar a classe com os atributos e métodos relevantes através da abstração e contexto de uma loja online.</li>
+                <li>Utilize o construtor para criar instâncias da classe CarroBrinquedo.</li>
+            </ul>
+            <hr>
+            <p><i>Dica: Pense em quais dados um cliente gostaria de ver ao clicar em um produto no site!</i></p>
+        </div>
+    </div>
+</div>
+</main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="referencias.html" class="btn-referencias">Referências</a>
+            </div>
+            <div class="footer-center">
+                <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+            </div>
+            <div class="footer-right">
+                <a href="exercicios.html" class="btn-exercicios" style="box-shadow: 0 0 15px rgba(55, 118, 171, 0.6);">Exercícios</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de dado String - Escola Python</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+<main>
+    <header>
+        <h1>Tipo de dado: String (str)</h1>
+        <p>A palavra "string" significa corda ou cordão, mas para facilitar, pense em uma <b>corrente</b>.</p>
+    </header>
+
+    <section id="string">
+        <div class="card">
+            <p>Uma corrente de portão é composta por vários elos. O Python entende a String exatamente assim: uma corrente onde cada "elo" é uma letra ou caractere.</p>
+        </div>
+
+        <h3>Exemplo prático:</h3>
+
+        <div class="code-box linha-lateral">
+            <pre><code class="syntax-highlight"><span class="syntax-variable">nome</span> = <span class="syntax-string">"Cristiano"</span></code></pre>
+        </div>
+
+        <ul>
+            <li><strong>nome:</strong> É a nossa variável (a etiqueta da caixa).</li>
+            <li><strong>"Cristiano":</strong> É a nossa string. Ela é identificada pelo uso de aspas (simples ou duplas).</li>
+        </ul>
+
+        <div class="card" style="border-left-color: var(--python-yellow);">
+            <h3>⚠️ Como o Python enxerga a String</h3>
+            <p>O Python vê a palavra como um conjunto de elementos organizados em uma lista. Cada letra recebe um número de posição (índice), <b>começando sempre pelo ZERO</b>.</p>
+        </div>
+
+        <h3>Mapa de Índices (A Corrente):</h3>
+        
+       <table style="width:100%; text-align:center; border-collapse: collapse; margin: 20px 0; background: white;">
+            <!-- LINHA DAS LETRAS (Azul com texto branco) -->
+            <tr style="background-color: var(--python-blue); color: white;">
+                <th style="padding: 10px; border: 1px solid #333;">Letra</th>
+                <td style="padding: 10px; border: 1px solid #333;">C</td>
+                <td style="padding: 10px; border: 1px solid #333;">r</td>
+                <td style="padding: 10px; border: 1px solid #333;">i</td>
+                <td style="padding: 10px; border: 1px solid #333;">s</td>
+                <td style="padding: 10px; border: 1px solid #333;">t</td>
+                <td style="padding: 10px; border: 1px solid #333;">i</td>
+                <td style="padding: 10px; border: 1px solid #333;">a</td>
+                <td style="padding: 10px; border: 1px solid #333;">n</td>
+                <td style="padding: 10px; border: 1px solid #333;">o</td>
+            </tr>
+            <!-- LINHA DOS ÍNDICES (Amarelo com texto preto) -->
+            <tr style="background-color: var(--python-yellow); color: black; font-weight: bold;">
+                <th style="padding: 10px; border: 1px solid #333;">Índice</th>
+                <td style="padding: 10px; border: 1px solid #333;">0</td>
+                <td style="padding: 10px; border: 1px solid #333;">1</td>
+                <td style="padding: 10px; border: 1px solid #333;">2</td>
+                <td style="padding: 10px; border: 1px solid #333;">3</td>
+                <td style="padding: 10px; border: 1px solid #333;">4</td>
+                <td style="padding: 10px; border: 1px solid #333;">5</td>
+                <td style="padding: 10px; border: 1px solid #333;">6</td>
+                <td style="padding: 10px; border: 1px solid #333;">7</td>
+                <td style="padding: 10px; border: 1px solid #333;">8</td>
+            </tr>
+        </table>
+        <h3>Verificando o Tipo no Console</h3>
+        <p>Sempre que você perguntar ao Python o tipo de uma variável de texto, ele retornará <code>str</code>.</p>
+
+        <div class="card">
+            <div class="code-box">
+                
+                <pre><code class="syntax-highlight"><span class="syntax-variable">nome</span> = <span class="syntax-string">"Cristiano"</span>
+<span class="syntax-function">print</span>(<span class="syntax-function">type</span>(<span class="syntax-variable">nome</span>))</code></pre>
+
+                <!-- FOTO CORRIGIDA: AGORA FORA DO CONSOLE, DIRETO NA CODE-BOX -->
+                <img src="https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2025/12/602915295-18499427350074227-8687877053419735661-n_1.jpg" 
+                     alt="Cristiano Ronaldo" 
+                     class="cr7-perfil">
+
+                <button class="console-btn" onclick="toggleConsole(this)">
+                    ▶️ Resultado do Console
+                </button>
+
+                <div class="console-output" style="position: relative;">
+                    &lt;class 'str'&gt;
+                </div>
+
+            </div>
+        </div>
+        
+        <p>O termo <code>class 'str'</code> indica que a variável pertence à classe das strings (textos).</p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

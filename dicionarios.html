@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicionários - Escola Python</title>
+    <!-- Link para o CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Menu de Navegação Completo -->
+    <nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+    <main>
+        <header>
+            <h1>Dicionários no Python</h1>
+            <p>No Python, os dicionários são coleções de dados muito poderosas baseadas em pares de chave e valor.</p>
+        </header>
+
+        <section id="o-que-sao">
+            <div class="card">
+                <h3>Analogia com a Língua Portuguesa</h3>
+                <p>O dicionário tradicional é uma obra que compila vocábulos e seus significados. No Python funciona da mesma forma:</p>
+                <ul>
+                    <li><span class="box-print-destaque"><span>Chave</span> (Key)</span>: Seria a palavra que você está procurando.</li>
+                    <li><span class="box-print-destaque"><span>Valor</span> (Value)</span>: Seria o significado ou conteúdo daquela palavra.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="criando-dicionarios">
+            <h2>Como criar um dicionário no Python?</h2>
+            <p>Há duas maneiras principais de se construir um dicionário:</p>
+
+            <div class="card">
+                <h3>1. Usando Chaves <code>{ }</code></h3>
+                <p>Atribuímos pares <span class="syntax-string">"chave"</span>: <span class="syntax-string">"valor"</span>.</p>
+                
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">dicionario</span> = {<span class="syntax-string">"nome"</span>: <span class="syntax-string">"cristiano"</span>, <span class="syntax-string">"gols"</span>: 900}
+<span class="syntax-function">print</span>(<span class="syntax-variable">dicionario</span>)</code></pre>
+
+                    <!-- Foto do CR7 para manter o padrão dos jogadores -->
+                    <img src="https://tmssl.akamaized.net/images/foto/galerie/cristiano-ronaldo-portugal-2024-1718103395-139335.jpg" 
+                         class="cr7-perfil" alt="Cristiano Ronaldo">
+
+                    <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">
+                        {'nome': 'cristiano', 'gols': 900}
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>2. Usando o método <span class="box-print-destaque"><span>dict</span>()</span></h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">metodo_dict</span> = <span class="syntax-function">dict</span>(nome=<span class="syntax-string">"davi"</span>, idade=25, profissao=<span class="syntax-string">"dev"</span>)
+<span class="syntax-function">print</span>(<span class="syntax-variable">metodo_dict</span>)</code></pre>
+                    <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">
+                        {'nome': 'davi', 'idade': 25, 'profissao': 'dev'}
+                    </div>
+                </div>
+                
+                <div class="card" style="border-left-color: #ffd43b; margin-top: 15px;">
+                    <h4>⚠️ Atenção à Sintaxe do <code>dict()</code></h4>
+                    <p>No método <span class="box-print-destaque"><span>dict</span>()</span>, as chaves <b>não</b> usam aspas e usamos o sinal de igual (<span class="syntax-keyword">=</span>).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="acessando-itens">
+            <h2>Acessando os Itens do Dicionário</h2>
+            
+            <div class="card">
+                <h3>Acessando um valor específico</h3>
+                <p>Usamos o nome da chave dentro de colchetes <span class="box-print-destaque"><span>[ ]</span></span> para buscar o dado.</p>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">jogador</span> = {
+    <span class="syntax-string">"nome"</span>: <span class="syntax-string">"cristiano"</span>,
+    <span class="syntax-string">"camisa"</span>: <span class="syntax-string">"7"</span>,
+    <span class="syntax-string">"N_gols"</span>: 970
+}
+
+<span class="syntax-variable">x</span> = <span class="syntax-variable">jogador</span>[<span class="syntax-string">"nome"</span>]
+<span class="syntax-function">print</span>(<span class="syntax-variable">x</span>)</code></pre>
+                    <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">cristiano</div>
+                </div>
+            </div>
+
+            <div class="card" style="border-left-color: #3776ab;">
+                <h3>Como descobrir as chaves?</h3>
+                <p>O método <span class="box-print-destaque">.<span>keys</span>()</span> retorna uma lista com todas as chaves disponíveis.</p>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">x</span> = <span class="syntax-variable">jogador</span>.<span class="syntax-function">keys</span>()
+<span class="syntax-function">print</span>(<span class="syntax-variable">x</span>)</code></pre>
+                    <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">dict_keys(['nome', 'camisa', 'N_gols'])</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+  
+</body>
+</html>

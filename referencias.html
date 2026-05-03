@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referências e Créditos - Escola Python</title>
+    <!-- Link para o seu CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Estilo específico para deixar os links de referência bonitos */
+        .ref-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ref-list li {
+            margin-bottom: 15px;
+        }
+        .ref-link {
+            display: inline-block;
+            color: var(--python-blue);
+            text-decoration: none;
+            padding: 10px 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            border: 1px solid rgba(55, 118, 171, 0.3);
+            transition: all 0.3s ease;
+            width: 100%;
+            word-break: break-all;
+        }
+        .ref-link:hover {
+            background: var(--python-blue);
+            color: white !important;
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(55, 118, 171, 0.2);
+        }
+        .mestre-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .mestre-badge {
+            background-color: var(--python-yellow);
+            color: #1a202c;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav com Transparência e Blur -->
+    <nav>
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+            <div class="logo">Davi Python</div>
+        </div>
+        
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="variaveis.html">Variáveis</a></li>
+            <li><a href="tipos.html">Tipos de Variáveis</a></li>
+            <li><a href="string.html">O que é String</a></li>
+            <li><a href="print.html">O que é Print</a></li>
+            <li><a href="identacao.html">Identação</a></li>
+            <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+            <li><a href="numericos.html">Dados Numéricos</a></li>
+            <li><a href="listas-carac.html">Carac. Listas</a></li>
+            <li><a href="tuplas.html">Tuplas</a></li>
+            <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+            <li><a href="dicionarios.html">Dicionários</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Referências e Créditos</h1>
+            <p>Nada se cria sozinho. Aqui estão as fontes oficiais e os mentores que ajudaram na construção deste material.</p>
+        </header>
+
+        <section id="fontes">
+    <!-- Trocando os livros pelo ícone do Python -->
+    <h2 style="display: flex; align-items: center; gap: 10px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" 
+             alt="Python Logo" 
+             style="width: 30px; height: auto;">
+        Fontes de Estudo
+    </h2>
+
+    <div class="card">
+        <p>Estes são os pilares da documentação oficial do Python e as melhores comunidades de ensino web do mundo:</p>
+        <ul class="ref-list">
+            <li><a href="https://www.w3schools.com/" target="_blank" class="ref-link">W3Schools - Web Development Tutorials</a></li>
+            <li><a href="https://www.python.org/" target="_blank" class="ref-link">Python.org - Official Website</a></li>
+            <li><a href="https://docs.python.org/pt-br/3.9/tutorial/index.html" target="_blank" class="ref-link">Tutorial Oficial do Python (PT-BR)</a></li>
+            <li><a href="https://docs.python.org/pt-br/3/library/index.html" target="_blank" class="ref-link">Biblioteca Padrão do Python</a></li>
+            <li><a href="https://docs.python.org/pt-br/3.13/contents.html" target="_blank" class="ref-link">Documentação Python 3.13 - Completa</a></li>
+        </ul>
+    </div>
+</section>
+
+        <section id="agradecimentos">
+            <h2>🎓 Créditos Especiais</h2>
+            <div class="card" style="border-left-color: #0db073;">
+                <p>Um agradecimento especial aos professores da <b>Jala University</b> por compartilharem seu conhecimento e guiarem esta jornada tecnológica:</p>
+                
+                <div class="mestre-item">
+                    <span class="mestre-badge">Mestre</span>
+                    <span>mcivan</span>
+                </div>
+                
+                <div class="mestre-item">
+                    <span class="mestre-badge">Mestre</span>
+                    <span>Samuel</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer com Transparência e o Botão Verde de Referências -->
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

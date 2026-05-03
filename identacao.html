@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identação no Python - Escola Python</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+<main>
+    <header>
+        <h1>O que é a identação de um código?</h1>
+        <p>A indentação refere-se aos espaços no início de uma linha de código.</p>
+    </header>
+
+    <section id="identacao">
+        <div class="card">
+            <p>Enquanto em outras linguagens a indentação serve apenas para facilitar a leitura (estética), em <b>Python ela é obrigatória</b>. O Python usa a indentação para indicar onde começa e onde termina um bloco de código.</p>
+        </div>
+
+        <h2>Como usar a identação no Python</h2>
+        <p>Em linguagens como JavaScript, usamos chaves <code>{}</code> para abrir blocos. No Python, usamos os <b>dois pontos ( : )</b> e o recuo da linha.</p>
+
+        <h3>Exemplo Correto:</h3>
+        <div class="code-box">
+            <pre><code class="syntax-highlight">
+<span class="syntax-keyword">if</span> 5 > 2:
+    <span class="syntax-function">print</span>(<span class="syntax-string">"O número 5 é maior que o número 2!"</span>)</code></pre>
+
+            <button class="console-btn" onclick="toggleConsole(this)">
+                ▶️ Resultado do Console
+            </button>
+
+            <div class="console-output">
+                O número 5 é maior que o número 2!
+            </div>
+        </div>
+
+        <h3>Exemplo de Erro (O que NÃO fazer):</h3>
+
+        <div class="code-box erro">
+            <pre><code class="syntax-highlight">
+<span class="syntax-keyword">if</span> 5 > 2:
+    <span class="syntax-function">print</span>(<span class="syntax-string">"Espaço de 4 campos"</span>)
+      <span class="syntax-function">print</span>(<span class="syntax-string">"Espaço de 6 campos"</span>) <span class="syntax-comment"># ERRO!</span></code></pre>
+
+            <button class="console-btn" onclick="toggleCorrection(this)">
+                ✅ Versão Correta
+            </button>
+
+            <!-- Box corrigido com o Vault Boy -->
+            <div class="console-output" style="background-color: #252525; color: #fff; border-left: 4px solid #4caf50; position: relative;">
+                <p style="color: #4caf50; font-weight: bold; margin-top: 0;">✔ Código Corrigido:</p>
+                <pre><code class="syntax-highlight">
+<span class="syntax-keyword">if</span> 5 > 2:
+    <span class="syntax-function">print</span>(<span class="syntax-string">"Espaço de 4 campos"</span>)
+    <span class="syntax-function">print</span>(<span class="syntax-string">"Espaço de 6 campos"</span>) <span class="syntax-comment"># Agora sim!</span></code></pre>
+
+                <!-- Vault Boy posicionado aqui -->
+                <img src="https://sm.ign.com/ign_br/screenshot/default/icon-fo4-side-quest_tvjf.png" 
+                     alt="Quest Completa" 
+                     class="vault-boy">
+            </div>
+        </div>
+
+        <p><i>Dica: Para facilitar, use sempre a tecla <b>TAB</b> do seu teclado para identar!</i></p>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

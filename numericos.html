@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Numéricos - Escola Python</title>
+    <!-- Link para o CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Menu de Navegação Atualizado -->
+    <nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+    <main>
+        <header>
+            <h1>Dados do Tipo Numérico</h1>
+            <p>Assim como na matemática, na programação temos diferentes tipos de números: inteiros, decimais, imaginários e outros.</p>
+        </header>
+
+        <section id="dados-numericos">
+            <div class="card">
+                <p>No Python, existem 3 tipos numéricos principais. É essencial saber quando usá-los para evitar erros de precisão ou de lógica nos seus cálculos.</p>
+            </div>
+
+            <h2>Tipos de dados numéricos:</h2>
+            
+            <ul>
+                <!-- EXEMPLO INT -->
+                <li><strong>Integer (int):</strong>
+                    <p>Representa números inteiros, ou seja, números sem casas decimais.</p>
+                    <div class="code-box">
+                        <pre><code class="syntax-highlight">
+<span class="syntax-variable">number</span> = 5
+<span class="syntax-function">print</span>(<span class="syntax-function">type</span>(<span class="syntax-variable">number</span>))</code></pre>
+                        
+                        <!-- Foto do Neymar -->
+                        <img src="https://conteudo.imguol.com.br/c/esporte/47/2026/04/28/neymar-do-santos-na-partida-contra-o-san-lorenzo-pela-copa-sul-americana-1777415074611_v2_450x450.jpg" 
+                             class="cr7-perfil" alt="Neymar">
+
+                        <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                        <div class="console-output">
+                            &lt;class 'int'&gt;
+                        </div>
+                    </div>
+                </li>
+
+                <!-- EXEMPLO FLOAT -->
+                <li><strong>Floating Point (float):</strong>
+                    <p>Representa números reais ou "ponto flutuante". São os números que possuem casas decimais.</p>
+                    <div class="card">
+                        <p>💡 <b>Atenção:</b> No Python, usamos <b>ponto (.)</b> e não vírgula para separar as casas decimais.</p>
+                    </div>
+                    <div class="code-box">
+                        <pre><code class="syntax-highlight">
+<span class="syntax-variable">number</span> = 5.5555
+<span class="syntax-function">print</span>(<span class="syntax-function">type</span>(<span class="syntax-variable">number</span>))</code></pre>
+
+                        <!-- Foto do Messi -->
+                        <img src="https://images.ctfassets.net/3mv54pzvptwz/55YLwKPDnRXkqMBITRpWbC/0c2aefc04afa455c20e9ca0d209698e0/53174188191_42d4c831ae_o.jpg" 
+                             class="cr7-perfil" alt="Messi">
+
+                        <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                        <div class="console-output">
+                            &lt;class 'float'&gt;
+                        </div>
+                    </div>
+                </li>
+
+                <!-- EXEMPLO COMPLEX -->
+                <li><strong>Complex (complex):</strong>
+                    <p>Usados para representar números complexos com a unidade imaginária <code>j</code>.</p>
+                    <div class="code-box">
+                        <pre><code class="syntax-highlight">
+<span class="syntax-variable">number</span> = 5 + 8j
+<span class="syntax-function">print</span>(<span class="syntax-function">type</span>(<span class="syntax-variable">number</span>))</code></pre>
+
+                        <!-- Foto do Endrick -->
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoA3dFsbnGLHZFEwpRFpuAK8tCocKlqUVb7g&s" 
+                             class="cr7-perfil" alt="Endrick">
+
+                        <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                        <div class="console-output">
+                            &lt;class 'complex'&gt;
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="card" style="border-left-color: #ffd43b;">
+                <h3>Resumo</h3>
+                <p>O <span class="box-print-destaque"><span>int</span></span> é para contagens exatas, o <span class="box-print-destaque"><span>float</span></span> para preços ou medições, e o <span class="box-print-destaque"><span>complex</span></span> para cálculos científicos avançados.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+    
+</html>

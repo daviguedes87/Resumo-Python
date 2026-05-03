@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas, Tuplas e Range - Escola Python</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+   <nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+    <main>
+        <header>
+            <h1>Uso das Listas, Tuplas e do Range no Python</h1>
+            <p>Só por ter nomes diferentes você já percebe que são coisas diferentes e têm usos diferentes. Irei explicar um a um, fique tranquilo!</p>
+        </header>
+
+        <section id="colecoes">
+            
+            <!-- LISTAS -->
+            <h2>1. Listas (Arrays)</h2>
+            <div class="card">
+                <p>Pense numa lista como se fosse um <b>armário com várias gavetas</b>, e cada gaveta tem o seu número. Você sabe que em uma gaveta podemos guardar o que quisermos.</p>
+            </div>
+            
+            <p>Para criar uma lista, basta usar os colchetes <span class="box-print-destaque"><span>[ ]</span></span>:</p>
+            
+            <div class="code-box">
+                <pre><code class="syntax-highlight">
+<span class="syntax-comment"># Lista vazia e lista com itens</span>
+<span class="syntax-variable">gavetas</span> = []
+<span class="syntax-variable">lista_frutas</span> = [<span class="syntax-string">"banana"</span>, <span class="syntax-string">"maca"</span>, <span class="syntax-string">"abacate"</span>, <span class="syntax-string">"uva"</span>]
+<span class="syntax-function">print</span>(<span class="syntax-variable">lista_frutas</span>)</code></pre>
+                <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                <div class="console-output">['banana', 'maca', 'abacate', 'uva']</div>
+            </div>
+            
+            <p>Os elementos são separados por vírgulas. Para operações detalhadas, acesse a aba <b>"Carac. Listas"</b> no menu.</p>
+
+            <hr>
+
+            <!-- TUPLAS -->
+            <h2>2. Tuplas</h2>
+            <div class="card">
+                <p>Se a Lista é um armário aberto, a Tupla é um <b>cofre trancado</b>: ela é <b>imutável</b>.</p>
+            </div>
+            
+            <p>Usamos parênteses <span class="box-print-destaque"><span>( )</span></span> para criar uma tupla. Tentar alterar um valor nela gera um erro de sistema:</p>
+            
+            <div class="code-box erro">
+                <pre><code class="syntax-highlight">
+<span class="syntax-variable">dias_semana</span> = (<span class="syntax-string">"Domingo"</span>, <span class="syntax-string">"Segunda"</span>, <span class="syntax-string">"Terça"</span>)
+
+<span class="syntax-comment"># Isso vai travar o código:</span>
+<span class="syntax-variable">dias_semana</span>[0] = <span class="syntax-string">"Feriado"</span></code></pre>
+                <button class="console-btn" onclick="toggleConsole(this)">⚠️ Ver Erro no Console</button>
+                <div class="console-output" style="color: #ff4444;">
+                    TypeError: 'tuple' object does not support item assignment
+                </div>
+            </div>
+
+            <hr>
+
+            <!-- RANGE -->
+            <h2>3. Range</h2>
+            <div class="card">
+                <p>O <span class="box-print-destaque"><span>range</span>()</span> funciona como um <b>contador automático</b>.</p>
+            </div>
+
+            <p>Ele gera uma sequência de números. Lembre-se: na computação começamos do 0, então ele para um número antes do limite definido:</p>
+
+            <div class="code-box">
+                <pre><code class="syntax-highlight">
+<span class="syntax-comment"># Gerando números de 0 até 4 (para antes do 5)</span>
+<span class="syntax-variable">sequencia</span> = <span class="syntax-function">range</span>(5)
+
+<span class="syntax-function">print</span>(<span class="syntax-function">list</span>(<span class="syntax-variable">sequencia</span>))</code></pre>
+                <button class="console-btn" onclick="toggleConsole(this)">▶️ Resultado do Console</button>
+                <div class="console-output">[0, 1, 2, 3, 4]</div>
+            </div>
+
+            <hr>
+
+            <div class="card" style="border-left-color: #ffd43b;">
+                <h3>Resumo da Ópera</h3>
+                <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+                    <tr style="border-bottom: 1px solid #444;">
+                        <th style="text-align: left; padding: 8px;">Tipo</th>
+                        <th style="text-align: left; padding: 8px;">Símbolo</th>
+                        <th style="text-align: left; padding: 8px;">Uso Principal</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;"><b>Lista</b></td>
+                        <td style="padding: 8px;"><code>[]</code></td>
+                        <td style="padding: 8px;">Dados que podem mudar.</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;"><b>Tupla</b></td>
+                        <td style="padding: 8px;"><code>()</code></td>
+                        <td style="padding: 8px;">Dados fixos (segurança).</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px;"><b>Range</b></td>
+                        <td style="padding: 8px;"><code>range()</code></td>
+                        <td style="padding: 8px;">Gerar contagens numéricas.</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+    </main>
+    
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

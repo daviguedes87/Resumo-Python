@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características das Listas - Escola Python</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+    <style>
+        /* Estilização das Fotos nos Boxes */
+        .code-box {
+            position: relative;
+            min-height: 140px;
+        }
+
+        .code-box pre {
+            padding-right: 140px !important; /* Espaço para a foto não sobrepor o código */
+        }
+
+        .code-box-image-container {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 110px;
+            height: 110px;
+            border: 3px solid #ffd43b;
+            border-radius: 8px; /* Bordas levemente arredondadas para estilo */
+            background-color: #1e1e1e;
+            display: none;
+            z-index: 5;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .code-box-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .console-output {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .console-output.visible {
+            display: block;
+        }
+    </style>
+    <script>
+        function toggleConsoleComFoto(btn) {
+            const codeBox = btn.closest('.code-box');
+            const consoleOutput = codeBox.querySelector('.console-output');
+            const imageContainer = codeBox.querySelector('.code-box-image-container');
+
+            if (consoleOutput.classList.contains('visible')) {
+                consoleOutput.classList.remove('visible');
+                imageContainer.style.display = 'none';
+                btn.innerText = "▶️ Resultado do Console";
+            } else {
+                consoleOutput.classList.add('visible');
+                imageContainer.style.display = 'block';
+                btn.innerText = "Fechar Console";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+            <div class="logo">Davi Python</div>
+        </div>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="variaveis.html">Variáveis</a></li>
+            <li><a href="tipos.html">Tipos de Variáveis</a></li>
+            <li><a href="string.html">O que é String</a></li>
+            <li><a href="print.html">O que é Print</a></li>
+            <li><a href="identacao.html">Identação</a></li>
+            <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+            <li><a href="numericos.html">Dados Numéricos</a></li>
+            <li><a href="listas-carac.html" class="active">Carac. Listas</a></li>
+            <li><a href="tuplas.html">Tuplas</a></li>
+            <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+            <li><a href="dicionarios.html">Dicionários</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+    </nav>
+
+    <main>
+        <header>
+            <h1>Trabalhando com Listas no Python</h1>
+            <p>Listas são usadas para armazenar vários itens em uma única variável.</p>
+        </header>
+
+        <section id="lista-detalhes">
+            <h2>1. Índices e Fatiamento (Slicing)</h2>
+            <div class="code-box">
+                <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span> = ["banana", "maca", "pera"]
+<span class="syntax-function">print</span>(frutas[0])</code></pre>
+                
+                <div class="code-box-image-container">
+                    <img src="https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/09/15/1635196141-adriano-imperador.png" alt="Adriano Imperador">
+                </div>
+
+                <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                <div class="console-output">banana</div>
+            </div>
+            
+            <div class="card" style="border-left-color: #ffd43b; margin-top: 25px;">
+                <h3>Pegando Intervalos (Slicing)</h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-function">print</span>(frutas[0:3])</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://www.camara.leg.br/internet/deputado/bandep/139289.jpgmaior.jpg" alt="Lula">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['banana', 'maca', 'pera']</div>
+                </div>
+            </div>
+
+            <h2>2. Modificando Elementos</h2>
+            <div class="card">
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span>[0] = "abacate"
+<span class="syntax-function">print</span>(frutas)</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/11F51/production/_103735537_afpgetty.jpg.webp" alt="Bolsonaro">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['abacate', 'maca', 'pera']</div>
+                </div>
+            </div>
+
+            <h2>3. Adicionando Itens</h2>
+            <div class="card">
+                <h3>Método .append()</h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span>.append("caju")</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzty26fJdbgJ42yixy3qSo9uvDTeIT70xsTA&s" alt="Michel Temer">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['abacate', 'maca', 'pera', 'caju']</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Método .insert()</h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span>.insert(2, "uva")</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://veja.abril.com.br/wp-content/uploads/2020/01/dilma-rousseff-2017-0820.jpg.jpg?quality=70&strip=info&w=414&h=280&crop=1" alt="Dilma Rousseff">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['abacate', 'maca', 'uva', 'pera', 'caju']</div>
+                </div>
+            </div>
+
+            <h2>4. Removendo Itens</h2>
+            <div class="card">
+                <h3>Método .remove()</h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span>.remove("abacate")</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://media.gazetadopovo.com.br/2026/03/05192613/53660335282_940a8a7c4d_o-1-642x372.jpg.webp" alt="Daniel Vorcaro">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['uva', 'pera', 'caju']</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Método .pop()</h3>
+                <div class="code-box">
+                    <pre><code class="syntax-highlight">
+<span class="syntax-variable">frutas</span>.pop(1)</code></pre>
+
+                    <div class="code-box-image-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/pt/6/6f/Donald.png" alt="Pato Donald">
+                    </div>
+
+                    <button class="console-btn" onclick="toggleConsoleComFoto(this)">▶️ Resultado do Console</button>
+                    <div class="console-output">['uva', 'caju']</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left"><a href="referencias.html" class="btn-referencias">Referências</a></div>
+            <div class="footer-center"><p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p></div>
+            <div class="footer-right"><a href="exercicios.html" class="btn-exercicios">Exercícios</a></div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis - Escola Python</title>
+    <!-- Link para o CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav>
+        <div class="nav-brand">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+            <div class="logo">Davi Python</div>
+        </div>
+        
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="variaveis.html">Variáveis</a></li>
+            <li><a href="tipos.html">Tipos de Variáveis</a></li>
+            <li><a href="string.html">O que é String</a></li>
+            <li><a href="print.html">O que é Print</a></li>
+            <li><a href="identacao.html">Identação</a></li>
+            <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+            <li><a href="numericos.html">Dados Numéricos</a></li>
+            <li><a href="listas-carac.html">Carac. Listas</a></li>
+            <li><a href="tuplas.html">Tuplas</a></li>
+            <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+            <li><a href="dicionarios.html">Dicionários</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+    </nav>
+
+    <main>
+        <section id="variaveis">
+            <h2>O que são variáveis no Python?</h2>
+            
+            <div class="card">
+                <p>Imagine uma <b>caixa de mudança</b>. Dentro dessa caixa, você pode colocar conteúdos como roupas, pratos ou brinquedos. Para facilitar sua vida, você cola uma etiqueta dizendo o que tem dentro.</p>
+                <p>No Python, a variável é a <b>etiqueta</b> e o dado armazenado na memória é o <b>conteúdo</b> da caixa!</p>
+            </div>
+
+            <h3>Sintaxe das variáveis:</h3>
+            <div class="code-box">
+                <pre><code class="syntax-highlight"><span class="syntax-variable">nome_da_variavel</span> = <span class="syntax-string">"conteudo"</span></code></pre>
+            </div>
+
+            <ul>
+                <li><strong>O Nome (A Etiqueta):</strong> 
+                    <p>Pode ser quase qualquer nome, mas com duas regras obrigatórias:</p>
+                    <ul>
+                        <li>Não pode começar com números (ex: <code>1nome</code> está errado).</li>
+                        <li>Não pode usar palavras reservadas do sistema (como <code>if</code>, <code>while</code>, <code>print</code>).</li>
+                    </ul>
+                </li>
+                <li><strong>O Conteúdo:</strong> 
+                    <p>Você é livre para colocar o que quiser, mas seja razoável! O conteúdo deve fazer sentido para quem lê o código.</p>
+                </li>
+            </ul>
+
+            <div class="card">
+                <h3>Cuidados ao nomear!</h3>
+                <p>Como você muitas vezes trabalhará em grupo, evite nomes genéricos como 'a' ou 'b'. Use nomes que descrevam o dado, como <code>nome_jogador</code> ou <code>pontuacao_total</code>.</p>
+            </div>
+
+            <h3>Exemplo prático:</h3>
+            <!-- Container unificado com cores de realce e console interativo -->
+            <!-- Seção do Exemplo Prático dentro do Card -->
+<!-- Seção do Exemplo Prático dentro do Card -->
+<div class="card">
+    <h3>Exemplo prático:</h3>
+    <div class="code-box">
+    
+    <!-- Link direto da internet. Não precisa baixar nada! -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" class="cr7-image">
+
+    <pre><code class="syntax-highlight"><span class="syntax-comment"># Criando as variáveis</span>
+<span class="syntax-variable">melhor_do_mundo</span> = <span class="syntax-string">"Cristiano Ronaldo"</span>
+<span class="syntax-variable">segundo_melhor</span> = <span class="syntax-string">"Messi"</span>
+
+<span class="syntax-comment"># Exibindo o resultado</span>
+<span class="syntax-function">print</span>(<span class="syntax-variable">melhor_do_mundo</span>, <span class="syntax-string">"é melhor que"</span>, <span class="syntax-variable">segundo_melhor</span>)</code></pre>
+
+    <button class="console-btn" onclick="toggleConsole(this)">
+        ▶️ Resultado do Console
+    </button>
+
+    <div class="console-output">
+        Cristiano Ronaldo é melhor que Messi
+    </div>
+</div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso do Print - Escola Python</title>
+    <!-- Link para o CSS unificado -->
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+   <nav>
+    <div class="nav-brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" class="nav-icon" alt="Python Logo">
+        <div class="logo">Davi Python</div>
+    </div>
+    
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="variaveis.html">Variáveis</a></li>
+        <li><a href="tipos.html">Tipos de Variáveis</a></li>
+        <li><a href="string.html">O que é String</a></li>
+        <li><a href="print.html">O que é Print</a></li>
+        <li><a href="identacao.html">Identação</a></li>
+        <li><a href="sintaxe.html">Sintaxe/Dados</a></li>
+        <li><a href="numericos.html">Dados Numéricos</a></li>
+        <li><a href="listas-carac.html">Carac. Listas</a></li>
+        <li><a href="tuplas.html">Tuplas</a></li>
+        <li><a href="listas-tuplas.html">Listas/Tuplas/Range</a></li>
+        <li><a href="dicionarios.html">Dicionários</a></li>
+    </ul>
+    <button id="theme-toggle" class="theme-toggle">🌙 Modo Escuro</button>
+</nav>
+
+    <main>
+        <header>
+            <h1>Uso do Print no Python</h1>
+            <p>Como já dito no módulo de sintaxe, o <b>print</b> é a forma de declaração mais básica que temos no Python.</p>
+        </header>
+
+        <section id="funcao-print">
+            <div class="card">
+                <p>Chamamos essa declaração de <b>Função</b>. O Python possui várias funções (functions) e o <code>print()</code> é a porta de entrada para todas elas.</p>
+            </div>
+
+            <h2>O que é uma Função Nativa?</h2>
+<p>
+    O <span class="box-print-destaque"><span>print</span>()</span> é uma função <b>nativa</b> (ou <i>built-in function</i>). 
+    Isso significa que ela já vem "instalada" no núcleo do Python; não precisamos importar bibliotecas externas para usá-la.
+</p>
+
+            <div class="card">
+                <h3>Mas o que caracteriza uma função?</h3>
+                <ul>
+                    <li><strong>O uso dos parênteses ():</strong> Eles servem para "chamar" a função para executar uma tarefa.</li>
+                    <li><strong>Aceita argumentos:</strong> Argumentos são os dados que você coloca dentro dos parênteses para a função processar.</li>
+                </ul>
+            </div>
+
+           <h3>Exemplo de Uso e Argumentos</h3>
+<p>No exemplo abaixo, as frases e variáveis dentro dos parênteses são os <b>argumentos</b> que o print vai exibir no console:</p>
+
+<div class="card">
+    <div class="code-box">
+        <pre><code class="syntax-highlight">
+<span class="syntax-comment"># O argumento aqui é uma String direta</span>
+<span class="syntax-function">print</span>(<span class="syntax-string">"Olá, bem-vindo à Escola Python!"</span>)
+
+<span class="syntax-variable">nome</span> = <span class="syntax-string">"Davi"</span>
+<span class="syntax-comment"># Aqui passamos dois argumentos: uma String e uma Variável</span>
+<span class="syntax-function">print</span>(<span class="syntax-string">"Usuário logado:"</span>, <span class="syntax-variable">nome</span>)</code></pre>
+
+        <!-- Botão para disparar o console -->
+        <button class="console-btn" onclick="toggleConsole(this)">
+            ▶️ Resultado do Console
+        </button>
+
+        <!-- Área do Console (inicia escondida) -->
+        <div class="console-output">
+            Olá, bem-vindo à Escola Python!<br>
+            Usuário logado: Davi
+        </div>
+    </div>
+</div>
+    </main>
+    <footer>
+    <div class="footer-container">
+        <!-- Lado Esquerdo: Referências -->
+        <div class="footer-left">
+            <a href="referencias.html" class="btn-referencias">Referências</a>
+        </div>
+
+        <!-- Centro: Créditos -->
+        <div class="footer-center">
+            <p>Desenvolvido por <a href="https://github.com/daviguedes87" target="_blank">Davi Guedes</a></p>
+        </div>
+
+        <!-- Lado Direito: Botão Exercícios -->
+        <div class="footer-right">
+            <a href="exercicios.html" class="btn-exercicios">Exercícios</a>
+        </div>
+    </div>
+</footer>
+
+    
+</body>
+</html>
